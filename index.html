@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aryan Kumar — Computer Science & Engineering student, full-stack developer & AI/ML builder. Designing software at the intersection of technology and utility." />
+  <meta name="keywords" content="Aryan Kumar, portfolio, full stack developer, AI ML, computer science, LPU" />
+  <meta property="og:title" content="Aryan Kumar" />
+  <meta property="og:description" content="CS & Engineering student building full-stack apps, AI-powered experiences, and useful products." />
+  <meta property="og:type" content="website" />
+  <title>Aryan Kumar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Film grain overlay -->
+  <div id="grain" aria-hidden="true"></div>
+
+  <!-- Cinematic intro screen -->
+  <div id="intro" aria-hidden="true" role="presentation">
+    <div class="intro-word" aria-label="Aryan">
+      <span class="intro-letter" style="--i:0">A</span>
+      <span class="intro-letter" style="--i:1">R</span>
+      <span class="intro-letter" style="--i:2">Y</span>
+      <span class="intro-letter" style="--i:3">A</span>
+      <span class="intro-letter" style="--i:4">N</span>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div id="cursor-dot"   aria-hidden="true"></div>
+  <div id="cursor-ring"  aria-hidden="true"></div>
+  <div id="cursor-label" aria-hidden="true"></div>
+
+  <!-- Subtle mouse-following light -->
+  <div id="mouse-light" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ─── NAV ────────────────────────────────────────────────────── -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-brand" aria-label="Aryan Kumar — Home">AK</a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#about"     class="nav-link" data-section="about">About</a></li>
+      <li><a href="#work"      class="nav-link" data-section="work">Work</a></li>
+      <li><a href="#skills"    class="nav-link" data-section="skills">Stack</a></li>
+      <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+      <li><a href="#contact"   class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <main>
+
+    <!-- ─── HERO ──────────────────────────────────────────────────── -->
+    <section id="hero" aria-label="Hero introduction">
+      <canvas id="orbital-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero-grid">
+        <!-- Giant name block -->
+        <div class="hero-name-block">
+          <div class="hero-name-row">
+            <span class="hero-char" style="--ci:0">A</span><span
+            class="hero-char" style="--ci:1">R</span><span
+            class="hero-char" style="--ci:2">Y</span><span
+            class="hero-char" style="--ci:3">A</span><span
+            class="hero-char" style="--ci:4">N</span>
+          </div>
+          <div class="hero-name-row row-2">
+            <span class="hero-char" style="--ci:5">K</span><span
+            class="hero-char" style="--ci:6">U</span><span
+            class="hero-char" style="--ci:7">M</span><span
+            class="hero-char" style="--ci:8">A</span><span
+            class="hero-char" style="--ci:9">R</span>
+          </div>
+        </div>
+
+        <!-- Editorial photo -->
+        <div class="hero-photo-col" data-cursor-label="EXPLORE">
+          <div class="hero-photo-frame" id="hero-photo-frame">
+            <img
+              src="aryan.jpg"
+              alt="Aryan Kumar — CS & Engineering developer"
+              class="hero-photo"
+              width="300"
+              height="380"
+              loading="eager"
+            />
+            <div class="photo-overlay" aria-hidden="true"></div>
+            <div class="photo-meta" aria-hidden="true">
+              <span>01 / DEVELOPER</span>
+              <span>CS + AI/ML</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Descriptor -->
+        <div class="hero-descriptor" aria-label="Role description">
+          <span>Computer Science &amp; Engineering</span>
+          <span class="descriptor-sep" aria-hidden="true"> · </span>
+          <span>Full Stack · AI/ML</span>
+        </div>
+
+        <!-- Footer row -->
+        <div class="hero-bottom">
+          <div class="hero-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Available for opportunities</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#work"    class="cta-link magnetic" aria-label="View Projects">View Projects <span class="cta-arrow" aria-hidden="true">→</span></a>
+            <a href="#contact" class="cta-link magnetic" aria-label="Let's Connect">Let's Connect  <span class="cta-arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint" aria-label="Scroll down">
+        <div class="scroll-line"></div>
+        <span>scroll</span>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ──────────────────────────────────────────────────── -->
+    <section id="about" aria-labelledby="about-h">
+      <div class="container">
+        <div class="section-tag reveal-fade" style="--delay:0ms">
+          <span class="tag-num">00</span>
+          <span class="tag-label">ABOUT</span>
+        </div>
+
+        <div class="about-statement reveal-up" style="--delay:80ms">
+          <p class="statement-text" id="about-h">
+            I build software at the intersection of technology, creativity and real-world utility.
+          </p>
+        </div>
+
+        <div class="about-body">
+          <div class="about-text reveal-up" style="--delay:160ms">
+            <p>
+              As a Computer Science &amp; Engineering student at <strong>Lovely Professional University</strong>,
+              I work across the full stack — designing clean, responsive frontends, architecting
+              data-driven backends, and integrating AI/ML pipelines into products that solve real problems.
+            </p>
+            <p>
+              My work ranges from universal gift-search aggregators to campus food delivery platforms
+              and AI-powered audio recognition tools. I care deeply about the intersection of engineering
+              rigour and usable, thoughtful design.
+            </p>
+          </div>
+
+          <div class="about-stats reveal-up" style="--delay:240ms">
+            <div class="stat-row">
+              <span class="stat-num">03</span>
+              <span class="stat-desc">Featured<br/>Projects</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-num" data-target="7.22" data-decimal="2">0</span>
+              <span class="stat-desc">CGPA at<br/>LPU</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-num">AI</span>
+              <span class="stat-desc">+ Full<br/>Stack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SKILLS ─────────────────────────────────────────────────── -->
+    <section id="skills" aria-labelledby="skills-h">
+      <div class="container">
+        <div class="section-tag reveal-fade" style="--delay:0ms">
+          <span class="tag-num">01</span>
+          <span class="tag-label">STACK</span>
+        </div>
+        <h2 id="skills-h" class="section-heading reveal-up" style="--delay:60ms">
+          Tools of<br/>the trade.
+        </h2>
+
+        <div class="skills-table">
+
+          <div class="skill-group reveal-up" style="--delay:100ms">
+            <h3 class="skill-group-label">Languages</h3>
+            <div class="skill-list">
+              <span class="skill-item">C</span>
+              <span class="skill-item">C++</span>
+              <span class="skill-item">Java</span>
+              <span class="skill-item">Python</span>
+              <span class="skill-item">HTML</span>
+              <span class="skill-item">CSS</span>
+              <span class="skill-item">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal-up" style="--delay:160ms">
+            <h3 class="skill-group-label">Libraries &amp; Frameworks</h3>
+            <div class="skill-list">
+              <span class="skill-item">NumPy</span>
+              <span class="skill-item">Pandas</span>
+              <span class="skill-item">Matplotlib</span>
+              <span class="skill-item">Scikit-learn</span>
+              <span class="skill-item">OpenCV</span>
+              <span class="skill-item">Scikit-image</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal-up" style="--delay:220ms">
+            <h3 class="skill-group-label">Tools &amp; Platforms</h3>
+            <div class="skill-list">
+              <span class="skill-item">VS Code</span>
+              <span class="skill-item">Git</span>
+              <span class="skill-item">GitHub</span>
+              <span class="skill-item">Claude</span>
+              <span class="skill-item">Antigravity</span>
+              <span class="skill-item">LeetCode</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal-up" style="--delay:280ms">
+            <h3 class="skill-group-label">Databases / Backend</h3>
+            <div class="skill-list">
+              <span class="skill-item">MySQL</span>
+              <span class="skill-item">PostgreSQL</span>
+              <span class="skill-item">Supabase</span>
+              <span class="skill-item">Node.js</span>
+              <span class="skill-item">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal-up" style="--delay:340ms">
+            <h3 class="skill-group-label">Soft Skills</h3>
+            <div class="skill-list">
+              <span class="skill-item">Team Collaboration</span>
+              <span class="skill-item">Problem-Solving</span>
+              <span class="skill-item">Adaptability</span>
+              <span class="skill-item">Communication</span>
+              <span class="skill-item">Critical Thinking</span>
+              <span class="skill-item">Leadership</span>
+              <span class="skill-item">Event Management</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PROJECTS ───────────────────────────────────────────────── -->
+    <section id="work" aria-labelledby="work-h">
+      <div class="container">
+        <div class="section-tag reveal-fade" style="--delay:0ms">
+          <span class="tag-num">02</span>
+          <span class="tag-label">WORK</span>
+        </div>
+        <h2 id="work-h" class="section-heading reveal-up" style="--delay:60ms">
+          Things I've<br/>Built.
+        </h2>
+
+        <div class="project-rows">
+
+          <article class="project-row reveal-up" data-project="0" tabindex="0" role="button"
+            aria-labelledby="proj-h-0" style="--delay:120ms">
+            <div class="project-row-inner">
+              <span class="project-index">01</span>
+              <div class="project-info">
+                <h3 class="project-row-title" id="proj-h-0">Goody Gifteez</h3>
+                <p class="project-row-sub">Omni-search gifts across the entire web at once</p>
+              </div>
+              <div class="project-tech-tags" aria-hidden="true">
+                <span>React</span><span>Node.js</span><span>REST APIs</span><span>TailwindCSS</span>
+              </div>
+              <span class="project-arrow" aria-hidden="true">→</span>
+            </div>
+            <p class="project-peek">
+              A universal gift-search aggregator that queries multiple platforms simultaneously,
+              surfacing results through a clean, filterable interface with real-time suggestions and sorting.
+            </p>
+          </article>
+
+          <article class="project-row reveal-up" data-project="1" tabindex="0" role="button"
+            aria-labelledby="proj-h-1" style="--delay:200ms">
+            <div class="project-row-inner">
+              <span class="project-index">02</span>
+              <div class="project-info">
+                <h3 class="project-row-title" id="proj-h-1">Dá Crsp</h3>
+                <p class="project-row-sub">Crispy campus food delivered to your door</p>
+              </div>
+              <div class="project-tech-tags" aria-hidden="true">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Supabase</span>
+              </div>
+              <span class="project-arrow" aria-hidden="true">→</span>
+            </div>
+            <p class="project-peek">
+              A campus-focused food delivery web application featuring dynamic menu filtering,
+              cart management, streamlined checkout, and real-time order tracking.
+            </p>
+          </article>
+
+          <article class="project-row reveal-up" data-project="2" tabindex="0" role="button"
+            aria-labelledby="proj-h-2" style="--delay:280ms">
+            <div class="project-row-inner">
+              <span class="project-index">03</span>
+              <div class="project-info">
+                <h3 class="project-row-title" id="proj-h-2">AI Music Detector</h3>
+                <p class="project-row-sub">AI-powered music recognition &amp; genre detection</p>
+              </div>
+              <div class="project-tech-tags" aria-hidden="true">
+                <span>React</span><span>Python</span><span>AI/ML</span><span>Web Audio API</span>
+              </div>
+              <span class="project-arrow" aria-hidden="true">→</span>
+            </div>
+            <p class="project-peek">
+              An AI-powered browser application that identifies songs from audio input, classifies
+              genres, displays song metadata, and maintains a listening history.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── EDUCATION ──────────────────────────────────────────────── -->
+    <section id="education" aria-labelledby="edu-h">
+      <div class="container">
+        <div class="section-tag reveal-fade" style="--delay:0ms">
+          <span class="tag-num">03</span>
+          <span class="tag-label">EDUCATION</span>
+        </div>
+        <h2 id="edu-h" class="section-heading reveal-up" style="--delay:60ms">
+          Academic<br/>journey.
+        </h2>
+
+        <div class="edu-timeline">
+          <div class="edu-item reveal-up" style="--delay:120ms">
+            <div class="edu-connector" aria-hidden="true">
+              <div class="edu-dot edu-dot--active"></div>
+              <div class="edu-line"></div>
+            </div>
+            <div class="edu-content">
+              <span class="edu-date">Aug 2022 — Present</span>
+              <h3 class="edu-institution">Lovely Professional University</h3>
+              <p class="edu-degree">B.Tech — Computer Science &amp; Engineering</p>
+              <span class="edu-score">CGPA: 7.22</span>
+            </div>
+          </div>
+
+          <div class="edu-item reveal-up" style="--delay:220ms">
+            <div class="edu-connector" aria-hidden="true">
+              <div class="edu-dot"></div>
+              <div class="edu-line"></div>
+            </div>
+            <div class="edu-content">
+              <span class="edu-date">Apr 2023 — Mar 2025</span>
+              <h3 class="edu-institution">Page Junior College</h3>
+              <p class="edu-place">Banjara Hills, Telangana</p>
+              <p class="edu-degree">Intermediate (CBSE)</p>
+              <span class="edu-score">83%</span>
+            </div>
+          </div>
+
+          <div class="edu-item reveal-up" style="--delay:320ms">
+            <div class="edu-connector" aria-hidden="true">
+              <div class="edu-dot"></div>
+            </div>
+            <div class="edu-content">
+              <span class="edu-date">Apr 2022 — Mar 2023</span>
+              <h3 class="edu-institution">P. Obul Reddy Public School</h3>
+              <p class="edu-place">Jubilee Hills, Telangana</p>
+              <p class="edu-degree">Matriculate (CBSE)</p>
+              <span class="edu-score">82%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ─── CONTACT ────────────────────────────────────────────────── -->
+    <section id="contact" aria-labelledby="contact-h">
+      <div class="container">
+        <div class="section-tag reveal-fade" style="--delay:0ms">
+          <span class="tag-num">04</span>
+          <span class="tag-label">CONTACT</span>
+        </div>
+
+        <h2 id="contact-h" class="contact-heading reveal-up" style="--delay:80ms">
+          <span>Let's build</span><br/>
+          <span>something.</span>
+        </h2>
+
+        <p class="contact-sub reveal-up" style="--delay:160ms">
+          Have an idea, opportunity, or project worth exploring?
+        </p>
+
+        <div class="contact-links reveal-up" style="--delay:240ms">
+          <a href="mailto:aryankumar.000487@gmail.com" class="contact-link" data-cursor-label="OPEN ↗">
+            <span class="cl-label">Email</span>
+            <span class="cl-value">aryankumar.000487@gmail.com</span>
+            <span class="cl-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/aryan-kumar-a27a56295" target="_blank" rel="noopener noreferrer" class="contact-link" data-cursor-label="OPEN ↗">
+            <span class="cl-label">LinkedIn</span>
+            <span class="cl-value">Aryan Kumar</span>
+            <span class="cl-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="https://github.com/aryankumar-dev" target="_blank" rel="noopener noreferrer" class="contact-link" data-cursor-label="OPEN ↗">
+            <span class="cl-label">GitHub</span>
+            <span class="cl-value">Aryan Kumar</span>
+            <span class="cl-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="tel:+919381306181" class="contact-link">
+            <span class="cl-label">Mobile</span>
+            <span class="cl-value">+91-9381306181</span>
+            <span class="cl-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────────────── -->
+  <footer id="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span class="footer-name">ARYAN KUMAR</span>
+      <span class="footer-year">© 2026</span>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ─── PROJECT DETAIL OVERLAY ────────────────────────────────────── -->
+  <div id="project-overlay" role="dialog" aria-modal="true" aria-labelledby="po-title" aria-hidden="true">
+    <button id="po-close" aria-label="Close project details">
+      <span>ESC</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="po-inner">
+      <div class="po-header">
+        <span class="po-idx" id="po-idx"></span>
+        <h2 class="po-title" id="po-title"></h2>
+        <p class="po-subtitle" id="po-subtitle"></p>
+      </div>
+      <div class="po-body">
+        <p class="po-desc" id="po-desc"></p>
+        <div class="po-section">
+          <h3 class="po-section-label">Technologies</h3>
+          <div class="po-tech" id="po-tech"></div>
+        </div>
+        <div class="po-section">
+          <h3 class="po-section-label">Features</h3>
+          <ul class="po-features" id="po-features"></ul>
+        </div>
+        <div class="po-links-section">
+          <span class="po-placeholder">GitHub &amp; Live Demo — coming soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
