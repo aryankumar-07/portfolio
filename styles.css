@@ -477,7 +477,7 @@ body.hero-ready .hero-char {
 
 .hero-photo-frame {
   position: relative;
-  width: clamp(180px, 20vw, 280px);
+  width: clamp(150px, 16.5vw, 230px);
   cursor: none;
 }
 
@@ -1313,7 +1313,7 @@ body.hero-ready .hero-scroll-hint { opacity: 1; }
     padding-bottom: 0;
   }
 
-  .hero-photo-frame { width: min(240px, 60vw); }
+  .hero-photo-frame { width: min(200px, 50vw); }
 
   .hero-descriptor { grid-column: 1; grid-row: 3; }
 
